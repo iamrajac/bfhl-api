@@ -183,8 +183,7 @@ app.post('/bfhl', (req, res) => {
 
 // Serve frontend
 const path = require('path');
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('/', (_, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+app.get('/', (_, res) => res.json({ status: 'BFHL API running. POST to /bfhl' }));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server on port ${PORT}`));
